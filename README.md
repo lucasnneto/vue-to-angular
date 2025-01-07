@@ -310,21 +310,20 @@ export class AppComponent {
 - **Lifecycle Hooks**: Métodos de ciclo de vida dos componentes.
 
 ```vue
-<script>
-export default {
-  created() {
-    console.log('Componente criado');
-  },
-  mounted() {
-    console.log('Componente montado');
-  },
-  updated() {
-    console.log('Componente atualizado');
-  },
-  destroyed() {
-    console.log('Componente destruído');
-  }
-}
+<script setup>
+import { onMounted, onUpdated, onUnmounted } from 'vue';
+
+onMounted(() => {
+  console.log('Componente montado');
+});
+
+onUpdated(() => {
+  console.log('Componente atualizado');
+});
+
+onUnmounted(() => {
+  console.log('Componente destruído');
+});
 </script>
 ```
 
